@@ -1,6 +1,5 @@
-import masterys.ExerciseVehicle.Account;
-import masterys.ExerciseVehicle.BusinessAcct;
-import masterys.ExerciseVehicle.PersonalAcct;
+package masterys;
+
 
 public class ExerciseVehicle1 {
 

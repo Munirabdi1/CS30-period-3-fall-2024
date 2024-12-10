@@ -1,6 +1,7 @@
 package masterys;
 
-public class AccountPersonalAcctBusinessAcct {
+public class AccountPersonalAcctBusinessAcct 
+{
 
 	
 	public class Account {
@@ -69,8 +70,10 @@ public class AccountPersonalAcctBusinessAcct {
 	    }
 	}
 
-	public class Main {
-	    public static void main(String[] args) {
+	public class Main 
+	{
+	    public static void main(String[] args)
+	    {
 	        // Create a Personal Account
 	        PersonalAcct personalAccount = new PersonalAcct(12345, 50);
 
@@ -101,5 +104,6 @@ public class AccountPersonalAcctBusinessAcct {
 	        businessAccount.withdraw(400);
 	        System.out.println("Business Account Balance: " + businessAccount.getBalance());
 	    }
-	}
+	
 
+	}
