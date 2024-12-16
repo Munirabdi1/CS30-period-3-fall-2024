@@ -1,99 +1,67 @@
 package masterys;
 
+import java.util.LinkedList;
+
 public class QueueList {
-
-    // Node class to represent each element in the queue
-    private class Node {
-        Object data;
-        Node next;
-
-        public Node(Object data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    private Node front; // The front of the queue
-    private Node rear;  // The rear of the queue
-    private int size;   // Size of the queue
+    // Internal LinkedList to represent the queue
+    private LinkedList<Integer> queue;
 
     // Constructor
     public QueueList() {
-        this.front = null;
-        this.rear = null;
-        this.size = 0;
+        queue = new LinkedList<>();
     }
 
-    // Enqueue operation: Adds an element to the queue
-    public void enqueue(Object data) {
-        Node newNode = new Node(data);
-        if (isEmpty()) {
-            front = rear = newNode; // If the queue is empty, front and rear are the same
-        } else {
-            rear.next = newNode;   // Link the new node at the end of the queue
-            rear = newNode;        // Update the rear to the new node
-        }
-        size++;
+    // Add an element to the queue (enqueue)
+    public void enqueue(int item) {
+        queue.addLast(item);
+        System.out.println("Enqueued: " + item);
     }
 
-    // Dequeue operation: Removes and returns the front element from the queue
-    public Object dequeue() {
+    // Remove an element from the queue (dequeue)
+    public int dequeue() {
         if (isEmpty()) {
-            throw new IllegalStateException("Queue is empty. Cannot dequeue.");
+            System.out.println("Queue is empty. Cannot dequeue.");
+            return -1;
         }
-        Object data = front.data;
-        front = front.next; // Move the front to the next node
-        if (front == null) {
-            rear = null; // If the queue becomes empty, rear should also be null
-        }
-        size--;
-        return data;
+        int item = queue.removeFirst();
+        System.out.println("Dequeued: " + item);
+        return item;
     }
 
-    // Peek operation: Returns the front element without removing it
-    public Object peek() {
+    // Peek the front element of the queue
+    public int peek() {
         if (isEmpty()) {
-            throw new IllegalStateException("Queue is empty. Cannot peek.");
+            System.out.println("Queue is empty. Nothing to peek.");
+            return -1;
         }
-        return front.data;
+        return queue.getFirst();
     }
 
     // Check if the queue is empty
     public boolean isEmpty() {
-        return front == null;
+        return queue.isEmpty();
     }
 
-    // Get the size of the queue
-    public int size() {
-        return size;
+    // Print all elements in the queue
+    public void printQueue() {
+        System.out.println("Current Queue: " + queue);
     }
 
-    // Main method to test the QueueList implementation
+    // Main method to test the QueueList class
     public static void main(String[] args) {
         QueueList queue = new QueueList();
 
-        // Enqueue elements
-        queue.enqueue("Apple");
-        queue.enqueue("Banana");
-        queue.enqueue("Cherry");
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
 
-        // Peek at the front element
-        System.out.println("Front of queue: " + queue.peek()); // Output: Apple
+        queue.printQueue();
 
-        // Dequeue elements
-        System.out.println("Dequeued: " + queue.dequeue()); // Output: Apple
-        System.out.println("Dequeued: " + queue.dequeue()); // Output: Banana
+        System.out.println("Front Element: " + queue.peek());
+        queue.dequeue();
+        queue.printQueue();
 
-        // Check the size of the queue
-        System.out.println("Queue size: " + queue.size()); // Output: 1
-
-        // Check if the queue is empty
-        System.out.println("Is queue empty? " + queue.isEmpty()); // Output: false
-
-        // Dequeue the last element
-        System.out.println("Dequeued: " + queue.dequeue()); // Output: Cherry
-
-        // Check if the queue is empty
-        System.out.println("Is queue empty? " + queue.isEmpty()); // Output: true
+        System.out.println("Is the queue empty? " + queue.isEmpty());
     }
 }
+

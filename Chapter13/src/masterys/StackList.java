@@ -1,89 +1,53 @@
 package masterys;
 
-// Node class to represent each element in the stack
-class Node {
-    Object data;
-    Node next;
-
-    public Node(Object data) {
-        this.data = data;
-        this.next = null;
-    }
-}
+import java.util.LinkedList;
 
 public class StackList {
-    private Node top; // Top of the stack
-    private int size; // Size of the stack
+    private LinkedList<Object> stack;
 
-    // Constructor
     public StackList() {
-        this.top = null;
-        this.size = 0;
+        stack = new LinkedList<>();
     }
 
-    // Push operation: Adds an element to the stack
-    public void push(Object data) {
-        Node newNode = new Node(data);
-        newNode.next = top; // Link the new node to the previous top
-        top = newNode;      // Update the top to the new node
-        size++;
+    // Push an element to the stack
+    public void push(Object item) {
+        stack.addFirst(item);
     }
 
-    // Pop operation: Removes and returns the top element from the stack
+    // Pop an element from the stack
     public Object pop() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Stack is empty. Cannot pop.");
+        if (stack.isEmpty()) {
+            System.out.println("Stack is empty. Cannot pop.");
+            return null;
         }
-        Object data = top.data;
-        top = top.next; // Update the top to the next node
-        size--;
-        return data;
+        return stack.removeFirst();
     }
 
-    // Peek operation: Returns the top element without removing it
+    // Peek the top element of the stack
     public Object peek() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Stack is empty. Cannot peek.");
+        if (stack.isEmpty()) {
+            System.out.println("Stack is empty.");
+            return null;
         }
-        return top.data;
+        return stack.getFirst();
     }
 
     // Check if the stack is empty
     public boolean isEmpty() {
-        return top == null;
+        return stack.isEmpty();
     }
 
-    // Get the size of the stack
-    public int size() {
-        return size;
-    }
-
-    // Main method to test the StackList implementation
     public static void main(String[] args) {
         StackList stack = new StackList();
+        
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
 
-        // Push elements onto the stack
-        stack.push("Apple");
-        stack.push("Banana");
-        stack.push("Cherry");
+        System.out.println("Top element: " + stack.peek()); // Output: 30
+        System.out.println("Popped element: " + stack.pop()); // Output: 30
 
-        // Peek at the top element
-        System.out.println("Top of stack: " + stack.peek()); // Output: Cherry
-
-        // Pop elements from the stack
-        System.out.println("Popped: " + stack.pop()); // Output: Cherry
-        System.out.println("Popped: " + stack.pop()); // Output: Banana
-
-        // Check the size of the stack
-        System.out.println("Stack size: " + stack.size()); // Output: 1
-
-        // Check if the stack is empty
-        System.out.println("Is stack empty? " + stack.isEmpty()); // Output: false
-
-        // Pop the last element
-        System.out.println("Popped: " + stack.pop()); // Output: Apple
-
-        // Check if the stack is empty
-        System.out.println("Is stack empty? " + stack.isEmpty()); // Output: true
+        System.out.println("Top element after pop: " + stack.peek()); // Output: 20
+        System.out.println("Is the stack empty? " + stack.isEmpty()); // Output: false
     }
 }
