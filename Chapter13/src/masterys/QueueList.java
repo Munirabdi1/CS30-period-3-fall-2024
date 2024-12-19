@@ -1,3 +1,18 @@
+/*
+
+Program: QueueList         Last Date of this Revision: December 18, 2024
+
+Purpose: The QueueList application implements a basic queue using a LinkedList. 
+It supports operations such as enqueue (add item), dequeue (remove item), peek (view front item),
+and checks if the queue is empty. The current state of the queue can be printed at any point.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
 package masterys;
 
 import java.util.LinkedList;
@@ -64,4 +79,3 @@ public class QueueList {
         System.out.println("Is the queue empty? " + queue.isEmpty());
     }
 }
-

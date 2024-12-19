@@ -1,3 +1,17 @@
+/*
+
+Program: Employee         Last Date of this Revision: December 18, 2024
+
+Purpose: This program demonstrates the creation and use of a base `UEmployee` class, which is inherited by `Faculty` 
+and `Staff` classes. It simulates an employee management system with different roles in an academic institution.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
 package masters;
 
 // Base UEmployee class
@@ -57,4 +71,5 @@ public class Employee {
         System.out.println("Staff: " + staff.getName() + ", Salary: " + staff.getSalary() + ", Job Title: " + staff.getJobTitle());
     }
 }
+
 

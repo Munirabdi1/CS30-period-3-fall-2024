@@ -1,3 +1,17 @@
+/*
+
+Program: AccountPersonalAcctBusinessAcct         Last Date of this Revision: December 18, 2024
+
+Purpose: This program demonstrates the creation and operation of two types of bank accounts: Personal and Business.
+It shows how these accounts handle deposits, withdrawals, and account penalties based on minimum balance requirements.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
 package masters;
 
 // Base Account class
@@ -76,3 +90,4 @@ public class AccountPersonalAcctBusinessAcct {
         System.out.println("Business Account Balance: $" + business.getBalance());
     }
 }
+

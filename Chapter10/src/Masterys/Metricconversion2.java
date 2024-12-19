@@ -1,3 +1,4 @@
+
 /*
 
 Program: Metricconversion2         Last Date of this Revision: October 4, 2024
@@ -11,7 +12,7 @@ School: CHHS
 Course: Computer Programming 30
 
 */
-
+package Masterys;
 import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -113,5 +114,4 @@ public class Metricconversion2 {
                 lblResult.setText("");
         }
     }
-}              
-
+}

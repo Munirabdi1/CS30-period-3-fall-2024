@@ -1,3 +1,17 @@
+/*
+
+Program: StackList         Last Date of this Revision: December 18, 2024
+
+Purpose: The StackList application implements a stack using a LinkedList. 
+It provides methods to push, pop, peek, and check if the stack is empty.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
 package masterys;
 
 import java.util.LinkedList;

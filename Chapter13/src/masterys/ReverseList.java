@@ -1,3 +1,17 @@
+/*
+
+Program: ReverseList         Last Date of this Revision: December 18, 2024
+
+Purpose: The ReverseList application allows the user to enter up to 10 numbers. 
+It stores them in a stack, and when the user finishes inputting, it reverses and displays the list.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
 package masterys;
 
 import java.util.Scanner;
@@ -35,6 +49,7 @@ public class ReverseList {
         scanner.close();  // Close the scanner object
     }
 }
+
 
 
 

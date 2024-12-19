@@ -1,5 +1,18 @@
-package masters;
+/*
 
+Program: Vehicle Information         Last Date of this Revision: December 18, 2024
+
+Purpose: This program demonstrates the use of inheritance with an abstract class `Vehicle` and its subclasses 
+`Car`, `Truck`, and `Minivan`. It provides a way to represent different types of vehicles and display their information.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
+ 
 // Abstract Vehicle class
 abstract class Vehicle {
     protected String make;
@@ -72,3 +85,4 @@ public class VehicleCarTruckMinivan {
         System.out.println(minivan.getInfo());
     }
 }
+

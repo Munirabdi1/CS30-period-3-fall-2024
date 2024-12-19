@@ -1,3 +1,17 @@
+/*
+
+Program: MySavings                Last Date of this Revision: October 4, 2024
+
+Purpose: The MySavings program simulates a piggy bank. It allows the user to add coins, display the total amount, withdraw money, and save/load the piggy bank state using a file.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
+
 package chapter11;
 
 import java.io.*;
@@ -81,6 +95,9 @@ public class MySavings {
         scanner.close(); // Close the scanner
     }
 
+    /**
+     * Save the state of the piggy bank to a file.
+     */
     private void savePiggyBank() {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("piggy_bank.dat"))) {
             out.writeObject(piggyBank); // Save the piggy bank to a file
@@ -90,6 +107,9 @@ public class MySavings {
         }
     }
 
+    /**
+     * Load the state of the piggy bank from a file.
+     */
     private void loadPiggyBank() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("piggy_bank.dat"))) {
             piggyBank = (PiggyBank) in.readObject(); // Load the piggy bank from a file
@@ -102,4 +122,3 @@ public class MySavings {
         }
     }
 }
-
