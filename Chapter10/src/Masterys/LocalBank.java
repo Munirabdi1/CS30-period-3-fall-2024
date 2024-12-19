@@ -1,4 +1,19 @@
+/*
+
+Program: LocalBank         Last Date of this Revision: dECEMBER 18 , 2024
+
+Purpose: The LocalBank application allows users to perform deposit and withdrawal transactions, while maintaining and displaying their balance.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
+
 package Masterys;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -105,14 +120,20 @@ public class LocalBank {
         String accountNumber = txtAccountNumber.getText();
         String firstName = txtFirstName.getText();
         String lastName = txtLastName.getText();
-        double amount = Double.parseDouble(txtAmount.getText());
+        double amount;
+
+        try {
+            amount = Double.parseDouble(txtAmount.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(frame, "Please enter a valid amount!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         if (accountNumber.isEmpty() || firstName.isEmpty() || lastName.isEmpty()) {
             JOptionPane.showMessageDialog(frame, "Please fill in all fields!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-   
-       
+
         if (action.equals("Deposit")) {
             balance += amount;
         } else if (action.equals("Withdraw")) {
@@ -125,6 +146,6 @@ public class LocalBank {
 
         // Update the balance label
         lblBalance.setText(String.format("$%.2f", balance));
-
     }
 }
+

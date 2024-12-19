@@ -5,30 +5,36 @@ import java.util.Stack;
 
 public class ReverseList {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Stack<Integer> stack = new Stack<>();
+        // Initialize Scanner and Stack
+        Scanner scanner = new Scanner(System.in);  
+        Stack<Integer> stack = new Stack<>();     
 
+        // Prompt for input
         System.out.println("Enter up to 10 numbers (enter 999 to quit):");
 
+        // Loop for user input
         while (true) {
-            int number = scanner.nextInt();
-            if (number == 999) break;
+            int number = scanner.nextInt();  // Read user input
+            if (number == 999) break;        // Stop if 999 is entered
 
             if (stack.size() < 10) {
-                stack.push(number);
+                stack.push(number);  // Push number onto stack
             } else {
                 System.out.println("You have entered the maximum of 10 numbers.");
-                break;
+                break;  // Stop if 10 numbers are entered
             }
         }
 
+        // Output the reversed list
         System.out.println("The list reversed is:");
         while (!stack.isEmpty()) {
-            System.out.print(stack.pop() + " ");
+            System.out.print(stack.pop() + " ");  // Pop from the stack and print each number
         }
 
-        scanner.close();
+        // Close the scanner
+        scanner.close();  // Close the scanner object
     }
 }
+
 
 

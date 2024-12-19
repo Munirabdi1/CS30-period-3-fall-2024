@@ -1,4 +1,16 @@
-package Masterys;
+/*
+
+Program: Metricconversion2         Last Date of this Revision: October 4, 2024
+
+Purpose: The Metricconversion2 application allows users to select a type of metric conversion (e.g., inches to centimeters) and displays the corresponding conversion formula.
+
+Author: 
+
+School: CHHS
+
+Course: Computer Programming 30
+
+*/
 
 import java.awt.EventQueue;
 import javax.swing.*;
@@ -101,4 +113,5 @@ public class Metricconversion2 {
                 lblResult.setText("");
         }
     }
-}
+}              
+
